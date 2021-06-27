@@ -1,5 +1,4 @@
-import org.gradle.accessors.dm.LibrariesForLibs
-import org.gradle.kotlin.dsl.the
+@file:Suppress("UnstableApiUsage")
 
 buildscript {
     repositories {
@@ -9,10 +8,9 @@ buildscript {
     }
 
     dependencies {
-        // TODO: This won't be necessary in Gradle >7.1
-//        val libs = project.extensions.getByType<VersionCatalogsExtension>().named("libs") as LibrariesForLibs
-
-        val libs = the<LibrariesForLibs>()
+        val libs = project.extensions
+            .getByType<VersionCatalogsExtension>()
+            .named("libs") as org.gradle.accessors.dm.LibrariesForLibs
 
         classpath(libs.android.gradlePlugin)
         classpath(libs.kotlin.gradlePlugin)
@@ -20,10 +18,10 @@ buildscript {
     }
 }
 
-subprojects {
-    apply(plugin = "org.jlleitschuh.gradle.ktlint")
+plugins {
+    id("dev.adambennett.gradle.plugins.ProjectConfigurationPlugin")
 }
 
-tasks.register("clean", Delete::class) {
-    delete(rootProject.buildDir)
+subprojects {
+    apply(plugin = "dev.adambennett.gradle.plugins.ProjectConfigurationPlugin")
 }

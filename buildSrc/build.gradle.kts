@@ -1,20 +1,28 @@
 @file:Suppress("UnstableApiUsage")
 
-import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
-
 plugins {
-    `java-gradle-plugin`
     `kotlin-dsl`
-    `kotlin-dsl-precompiled-script-plugins`
 }
 
-val compileKotlin: KotlinCompile by tasks
-
-compileKotlin.kotlinOptions {
-    languageVersion = libs.versions.kotlin.get().toString()
+tasks.wrapper {
+    distributionType = Wrapper.DistributionType.ALL
 }
 
 dependencies {
+
+    compileOnly(libs.android.gradleApi)
+    compileOnly(libs.gradle.experimental)
+
     implementation(libs.kotlin.gradlePlugin)
     implementation(libs.android.gradlePlugin)
+    implementation(libs.ktlintPlugin)
+}
+
+gradlePlugin {
+    plugins {
+        create("projectConfiguration") {
+            id = "dev.adambennett.gradle.plugins.ProjectConfigurationPlugin"
+            implementationClass = "dev.adambennett.gradle.plugins.ProjectConfigurationPlugin"
+        }
+    }
 }

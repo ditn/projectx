@@ -1,8 +1,8 @@
+@file:Suppress("UnstableApiUsage")
+
 enableFeaturePreview("VERSION_CATALOGS")
 
 dependencyResolutionManagement {
-    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
-
     versionCatalogs {
         create("libs") {
             from(files("../gradle/libs.toml"))
@@ -13,5 +13,6 @@ dependencyResolutionManagement {
         google()
         mavenCentral()
         gradlePluginPortal()
+        maven(url = "https://plugins.gradle.org/m2/")
     }
 }
