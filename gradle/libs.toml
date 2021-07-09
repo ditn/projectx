@@ -1,6 +1,6 @@
 [versions]
 kotlin = "1.5.10"
-androidBuildTools = "7.1.0-alpha02"
+androidBuildTools = "7.1.0-alpha03"
 gradleExperimental = "0.11.1"
 ktlintPlugin = "10.1.0"
 ktlint = "0.41.0"
@@ -10,7 +10,7 @@ androidx-appcompat = "1.4.0-alpha01"
 material = "1.4.0-beta01"
 androidx-lifecycle-runtime = "2.4.0-alpha01"
 androidx-activity = "1.3.0-alpha08"
-compose = "1.0.0-beta09"
+compose = "1.0.0-rc01"
 
 testing-junit = "4.13.2"
 testing-androidx-junit = "1.1.3-beta01"
