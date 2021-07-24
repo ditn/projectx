@@ -1,4 +1,4 @@
-import com.android.build.gradle.internal.dsl.BaseAppModuleExtension
+import dev.adambennett.gradle.extensions.enableCompose
 
 plugins {
     id("com.android.application")
@@ -22,7 +22,8 @@ android {
         }
     }
 
-    enableCompose()
+    // TODO: This is a bit of a hack while I wait for Gradle 7.2
+    enableCompose(project.libs.versions.compose.get())
 }
 
 dependencies {
@@ -40,15 +41,4 @@ dependencies {
     androidTestImplementation(libs.testing.androidx.junit)
     androidTestImplementation(libs.testing.espresso.core)
     androidTestImplementation(libs.testing.compose.ui)
-}
-
-// TODO: Move me to buildSrc once Gradle 7.2 is out - right now I can't get a reference to libs
-fun BaseAppModuleExtension.enableCompose() {
-    buildFeatures {
-        compose = true
-    }
-
-    composeOptions {
-        kotlinCompilerExtensionVersion = libs.versions.compose.get()
-    }
 }
