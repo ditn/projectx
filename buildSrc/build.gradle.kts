@@ -11,14 +11,14 @@ dependencies {
     compileOnly(libs.android.gradleApi)
     compileOnly(libs.gradle.experimental)
 
-    implementation(libs.kotlin.gradlePlugin)
-    implementation(libs.android.gradlePlugin)
-    implementation(libs.ktlintPlugin)
+    implementation(libs.kotlin.gradle)
+    implementation(libs.android.gradle)
+    implementation(libs.jlleitschuhKtlint)
 }
 
 gradlePlugin {
     plugins {
-        create("projectConfiguration") {
+        register("projectConfiguration") {
             id = "dev.adambennett.gradle.plugins.ProjectConfigurationPlugin"
             implementationClass = "dev.adambennett.gradle.plugins.ProjectConfigurationPlugin"
         }

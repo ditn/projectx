@@ -1,27 +1,27 @@
 [versions]
-kotlin = "1.5.10"
-androidBuildTools = "7.1.0-alpha03"
+kotlin = "1.5.21"
+androidBuildTools = "7.1.0-alpha06"
 gradleExperimental = "0.11.1"
-ktlintPlugin = "10.1.0"
-ktlint = "0.41.0"
+jlleitschuhKtlint = "10.1.0"
+ktlint = "0.42.1"
 
 androidx-core = "1.6.0-beta01"
 androidx-appcompat = "1.4.0-alpha01"
 material = "1.4.0-beta01"
 androidx-lifecycle-runtime = "2.4.0-alpha01"
 androidx-activity = "1.3.0-alpha08"
-compose = "1.0.0-rc01"
+compose = "1.0.1"
 
 testing-junit = "4.13.2"
 testing-androidx-junit = "1.1.3-beta01"
 testing-espresso-core = "3.4.0-beta01"
 
 [libraries]
-kotlin-gradlePlugin = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlin" }
-android-gradlePlugin = { module = "com.android.tools.build:gradle", version.ref = "androidBuildTools"}
+kotlin-gradle = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlin" }
+android-gradle = { module = "com.android.tools.build:gradle", version.ref = "androidBuildTools"}
 android-gradleApi = { module = "com.android.tools.build:gradle-api", version.ref = "androidBuildTools"}
 gradle-experimental = { module = "com.android.tools.build:gradle-experimental", version.ref = "gradleExperimental"}
-ktlintPlugin = { module = "org.jlleitschuh.gradle:ktlint-gradle", version.ref = "ktlintPlugin" }
+jlleitschuhKtlint = { module = "org.jlleitschuh.gradle:ktlint-gradle", version.ref = "jlleitschuhKtlint" }
 
 androidx-core-ktx = { module = "androidx.core:core-ktx", version.ref = "androidx-core"}
 androidx-appcompat = { module = "androidx.appcompat:appcompat", version.ref = "androidx-appcompat"}

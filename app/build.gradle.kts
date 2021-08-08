@@ -34,9 +34,9 @@ dependencies {
     implementation(libs.material)
     implementation(libs.bundles.androidx.compose)
 
-    testImplementation(libs.testing.junit)
-
     debugImplementation(libs.testing.compose.manifest)
+
+    testImplementation(libs.testing.junit)
 
     androidTestImplementation(libs.testing.androidx.junit)
     androidTestImplementation(libs.testing.espresso.core)

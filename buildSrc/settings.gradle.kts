@@ -4,7 +4,7 @@ enableFeaturePreview("VERSION_CATALOGS")
 
 dependencyResolutionManagement {
     versionCatalogs {
-        create("libs") {
+        register("libs") {
             from(files("../gradle/libs.toml"))
         }
     }
