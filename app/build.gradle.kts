@@ -22,7 +22,6 @@ android {
         }
     }
 
-    // TODO: This is a bit of a hack while I wait for Gradle 7.2
     enableCompose(project.libs.versions.compose.get())
 }
 

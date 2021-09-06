@@ -68,9 +68,5 @@ internal fun TestedExtension.configureCommonAndroidOptions() {
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
     }
-
-    sourceSets {
-        map { it.java.srcDir("src/${it.name}/kotlin") }
-    }
 }
 

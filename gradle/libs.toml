@@ -1,6 +1,6 @@
 [versions]
-kotlin = "1.5.21"
-androidBuildTools = "7.1.0-alpha08"
+kotlin = "1.5.30"
+androidBuildTools = "7.1.0-alpha11"
 gradleExperimental = "0.11.1"
 jlleitschuhKtlint = "10.1.0"
 ktlint = "0.42.1"
@@ -10,7 +10,7 @@ androidx-appcompat = "1.4.0-alpha03"
 material = "1.5.0-alpha01"
 androidx-lifecycle-runtime = "2.4.0-alpha03"
 androidx-activity = "1.3.1"
-compose = "1.0.1"
+compose = "1.1.0-alpha03"
 
 testing-junit = "4.13.2"
 testing-androidx-junit = "1.1.3"
@@ -18,26 +18,26 @@ testing-espresso-core = "3.4.0"
 
 [libraries]
 kotlin-gradle = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlin" }
-android-gradle = { module = "com.android.tools.build:gradle", version.ref = "androidBuildTools"}
-android-gradleApi = { module = "com.android.tools.build:gradle-api", version.ref = "androidBuildTools"}
-gradle-experimental = { module = "com.android.tools.build:gradle-experimental", version.ref = "gradleExperimental"}
+android-gradle = { module = "com.android.tools.build:gradle", version.ref = "androidBuildTools" }
+android-gradleApi = { module = "com.android.tools.build:gradle-api", version.ref = "androidBuildTools" }
+gradle-experimental = { module = "com.android.tools.build:gradle-experimental", version.ref = "gradleExperimental" }
 jlleitschuhKtlint = { module = "org.jlleitschuh.gradle:ktlint-gradle", version.ref = "jlleitschuhKtlint" }
 
-androidx-core-ktx = { module = "androidx.core:core-ktx", version.ref = "androidx-core"}
-androidx-appcompat = { module = "androidx.appcompat:appcompat", version.ref = "androidx-appcompat"}
-material = { module = "com.google.android.material:material", version.ref = "material"}
-androidx-lifecycle-runtime = { module = "androidx.lifecycle:lifecycle-runtime-ktx", version.ref = "androidx-lifecycle-runtime"}
-androidx-activity = { module = "androidx.activity:activity-compose", version.ref = "androidx-activity"}
+androidx-core-ktx = { module = "androidx.core:core-ktx", version.ref = "androidx-core" }
+androidx-appcompat = { module = "androidx.appcompat:appcompat", version.ref = "androidx-appcompat" }
+material = { module = "com.google.android.material:material", version.ref = "material" }
+androidx-lifecycle-runtime = { module = "androidx.lifecycle:lifecycle-runtime-ktx", version.ref = "androidx-lifecycle-runtime" }
+androidx-activity = { module = "androidx.activity:activity-compose", version.ref = "androidx-activity" }
 
-androidx-composeUi = { module = "androidx.compose.ui:ui", version.ref = "compose"}
+androidx-composeUi = { module = "androidx.compose.ui:ui", version.ref = "compose" }
 androidx-composeMaterial = { module = "androidx.compose.material:material", version.ref = "compose" }
 androidx-composeUiTooling = { module = "androidx.compose.ui:ui-tooling", version.ref = "compose" }
 
-testing-junit = { module = "junit:junit", version.ref = "testing-junit"}
-testing-androidx-junit = { module = "androidx.test.ext:junit-ktx", version.ref = "testing-androidx-junit"}
-testing-espresso-core = { module = "androidx.test.espresso:espresso-core", version.ref = "testing-espresso-core"}
-testing-compose-ui = { module = "androidx.compose.ui:ui-test-junit4", version.ref = "compose"}
-testing-compose-manifest = { module = "androidx.compose.ui:ui-test-manifest", version.ref = "compose"}
+testing-junit = { module = "junit:junit", version.ref = "testing-junit" }
+testing-androidx-junit = { module = "androidx.test.ext:junit-ktx", version.ref = "testing-androidx-junit" }
+testing-espresso-core = { module = "androidx.test.espresso:espresso-core", version.ref = "testing-espresso-core" }
+testing-compose-ui = { module = "androidx.compose.ui:ui-test-junit4", version.ref = "compose" }
+testing-compose-manifest = { module = "androidx.compose.ui:ui-test-manifest", version.ref = "compose" }
 
 [bundles]
-androidx-compose = [ "androidx-composeUi", "androidx-composeMaterial", "androidx-composeUiTooling" ]
+androidx-compose = ["androidx-composeUi", "androidx-composeMaterial", "androidx-composeUiTooling"]
