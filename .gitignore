@@ -24,3 +24,5 @@ gradle.xml
 
 # Do not commit firebase config
 google-services.json
+
+local.properties

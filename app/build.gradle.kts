@@ -32,6 +32,7 @@ dependencies {
     implementation(libs.androidx.lifecycle.runtime)
     implementation(libs.material)
     implementation(libs.bundles.androidx.compose)
+    implementation(libs.androidx.composeNavigation)
 
     debugImplementation(libs.testing.compose.manifest)
 
