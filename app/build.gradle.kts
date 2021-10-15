@@ -1,3 +1,4 @@
+import com.android.build.gradle.internal.dsl.ManagedVirtualDevice
 import dev.adambennett.gradle.extensions.enableCompose
 
 plugins {
@@ -23,6 +24,23 @@ android {
     }
 
     enableCompose(project.libs.versions.compose.get())
+
+    packagingOptions {
+        resources.excludes.add("META-INF/*")
+    }
+
+    testOptions {
+        devices {
+            add(
+                ManagedVirtualDevice("pixel2api30").apply {
+                    device = "Pixel 2"
+                    apiLevel = 30
+                    systemImageSource = "aosp-atd"
+                    abi = "x86"
+                }
+            )
+        }
+    }
 }
 
 dependencies {
@@ -39,6 +57,7 @@ dependencies {
     testImplementation(libs.testing.junit)
 
     androidTestImplementation(libs.testing.androidx.junit)
+    androidTestImplementation(libs.testing.androidx.core)
     androidTestImplementation(libs.testing.espresso.core)
     androidTestImplementation(libs.testing.compose.ui)
 }
