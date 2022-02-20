@@ -1,5 +1,3 @@
-@file:Suppress("UnstableApiUsage")
-
 buildscript {
     repositories {
         google()
