@@ -1,4 +1,4 @@
-import com.android.build.gradle.internal.dsl.ManagedVirtualDevice
+import com.android.build.api.dsl.ManagedVirtualDevice
 import dev.adambennett.gradle.extensions.enableCompose
 
 plugins {
@@ -31,14 +31,12 @@ android {
 
     testOptions {
         devices {
-            add(
-                ManagedVirtualDevice("pixel2api30").apply {
-                    device = "Pixel 2"
-                    apiLevel = 30
-                    systemImageSource = "aosp-atd"
-                    abi = "arm64-v8a"
-                }
-            )
+            register<ManagedVirtualDevice>("pixel2api30") {
+                device = "Pixel 2"
+                apiLevel = 30
+                systemImageSource = "aosp-atd"
+                abi = "arm64-v8a"
+            }
         }
     }
 }
