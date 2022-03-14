@@ -1,4 +1,4 @@
-package dev.adambennett.projectx.ui.theme
+package dev.adambennett.ui.core
 
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material.MaterialTheme

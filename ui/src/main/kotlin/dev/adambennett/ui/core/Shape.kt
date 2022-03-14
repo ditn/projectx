@@ -1,4 +1,4 @@
-package dev.adambennett.projectx.ui.theme
+package dev.adambennett.ui.core
 
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Shapes

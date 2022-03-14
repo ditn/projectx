@@ -42,11 +42,12 @@ android {
 }
 
 dependencies {
+    implementation(project(":ui"))
+
     implementation(libs.androidx.activity)
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.androidx.lifecycle.runtime)
-    implementation(libs.material)
     implementation(libs.bundles.androidx.compose)
     implementation(libs.androidx.composeNavigation)
 
@@ -57,5 +58,4 @@ dependencies {
     androidTestImplementation(libs.testing.androidx.junit)
     androidTestImplementation(libs.testing.androidx.core)
     androidTestImplementation(libs.testing.espresso.core)
-    androidTestImplementation(libs.testing.compose.ui)
 }
