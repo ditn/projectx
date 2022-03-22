@@ -42,7 +42,6 @@ kotlin {
 
 android {
     namespace = "dev.adambennett.ui"
-    sourceSets["main"].manifest.srcFile("src/androidMain/AndroidManifest.xml")
 }
 
 compose.desktop {

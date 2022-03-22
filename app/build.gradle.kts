@@ -7,6 +7,8 @@ plugins {
 }
 
 android {
+    namespace = "dev.adambennett.projectx"
+
     defaultConfig {
         applicationId = "dev.adambennett.projectx"
         versionCode = 1
@@ -30,12 +32,12 @@ android {
     }
 
     testOptions {
-        devices {
+        managedDevices.devices {
             register<ManagedVirtualDevice>("pixel2api30") {
                 device = "Pixel 2"
                 apiLevel = 30
                 systemImageSource = "aosp-atd"
-                abi = "arm64-v8a"
+                require64Bit = true
             }
         }
     }
