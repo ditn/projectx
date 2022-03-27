@@ -35,13 +35,10 @@ internal fun Project.configureForAllProjects() {
         targetCompatibility = JavaVersion.VERSION_11.toString()
     }
 
-    tasks.withType<KotlinJvmCompile>().configureEach {
-        kotlinOptions.jvmTarget = JavaVersion.VERSION_11.toString()
-    }
-
     tasks.withType<KotlinCompile>().configureEach {
         kotlinOptions {
             freeCompilerArgs = freeCompilerArgs + additionalCompilerArgs
+            jvmTarget = JavaVersion.VERSION_11.toString()
         }
     }
 

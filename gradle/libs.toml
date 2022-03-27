@@ -2,8 +2,8 @@
 kotlin = "1.6.10"
 androidBuildTools = "7.3.0-alpha07"
 gradleExperimental = "0.11.1"
-jlleitschuhKtlint = "10.2.0"
-ktlint = "0.42.1"
+jlleitschuhKtlint = "10.2.1"
+ktlint = "0.45.1"
 
 androidx-core = "1.8.0-alpha03"
 androidx-appcompat = "1.4.1"
@@ -35,6 +35,7 @@ androidx-activity = { module = "androidx.activity:activity-compose", version.ref
 androidx-composeUi = { module = "androidx.compose.ui:ui", version.ref = "compose" }
 androidx-composeMaterial = { module = "androidx.compose.material:material", version.ref = "compose" }
 androidx-composeUiTooling = { module = "androidx.compose.ui:ui-tooling", version.ref = "compose" }
+androidx-composePreview = { module = "androidx.compose.ui:ui-tooling-preview", version.ref = "compose" }
 androidx-composeNavigation = { module = "androidx.navigation:navigation-compose", version.ref = "composeNavigation" }
 
 testing-junit = { module = "junit:junit", version.ref = "testing-junit" }
@@ -45,4 +46,4 @@ testing-compose-ui = { module = "androidx.compose.ui:ui-test-junit4", version.re
 testing-compose-manifest = { module = "androidx.compose.ui:ui-test-manifest", version.ref = "compose" }
 
 [bundles]
-androidx-compose = ["androidx-composeUi", "androidx-composeMaterial", "androidx-composeUiTooling"]
+androidx-compose = ["androidx-composeUi", "androidx-composeMaterial", "androidx-composePreview"]

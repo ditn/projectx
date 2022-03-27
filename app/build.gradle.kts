@@ -54,7 +54,7 @@ dependencies {
     implementation(libs.bundles.androidx.compose)
     implementation(libs.androidx.composeNavigation)
 
-    debugImplementation(libs.testing.compose.manifest)
+    debugImplementation(libs.androidx.composeUiTooling)
 
     testImplementation(libs.testing.junit)
 

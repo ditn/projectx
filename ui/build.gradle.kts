@@ -23,7 +23,6 @@ kotlin {
                 implementation(compose.material)
                 implementation(compose.preview)
                 implementation(compose.runtime)
-                implementation(compose.uiTooling)
             }
         }
         val commonTest by getting
@@ -42,6 +41,10 @@ kotlin {
 
 android {
     namespace = "dev.adambennett.ui"
+
+    dependencies {
+        debugImplementation(libs.androidx.composeUiTooling)
+    }
 }
 
 compose.desktop {
