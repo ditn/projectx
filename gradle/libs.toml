@@ -1,9 +1,9 @@
 [versions]
 kotlin = "1.6.10"
-androidBuildTools = "7.3.0-alpha07"
+androidBuildTools = "7.3.0-alpha09"
 gradleExperimental = "0.11.1"
 jlleitschuhKtlint = "10.2.1"
-ktlint = "0.45.1"
+ktlint = "0.45.2"
 
 androidx-core = "1.8.0-alpha03"
 androidx-appcompat = "1.4.1"
