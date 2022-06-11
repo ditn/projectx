@@ -1,9 +1,12 @@
 import com.android.build.api.dsl.ManagedVirtualDevice
 import dev.adambennett.gradle.extensions.enableCompose
+import org.jetbrains.kotlin.kapt3.base.Kapt.kapt
 
 plugins {
     id("com.android.application")
     id("kotlin-android")
+    id("kotlin-kapt")
+    id("dagger.hilt.android.plugin")
 }
 
 android {
@@ -25,7 +28,7 @@ android {
         }
     }
 
-    enableCompose(project.libs.versions.compose.get())
+    enableCompose(project.libs.versions.jetbrainsCompose.get())
 
     packagingOptions {
         resources.excludes.add("META-INF/*")
@@ -43,6 +46,11 @@ android {
     }
 }
 
+hilt {
+    enableAggregatingTask = true
+    enableExperimentalClasspathAggregation = true
+}
+
 dependencies {
     implementation(project(":ui"))
 
@@ -53,6 +61,9 @@ dependencies {
     implementation(libs.androidx.lifecycle.runtime)
     implementation(libs.bundles.androidx.compose)
     implementation(libs.androidx.composeNavigation)
+
+    implementation(libs.dagger.hilt.android)
+    kapt(libs.dagger.hilt.android.compiler)
 
     debugImplementation(libs.androidx.composeUiTooling)
 

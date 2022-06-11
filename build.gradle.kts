@@ -9,6 +9,16 @@ buildscript {
         classpath(libs.android.gradle)
         classpath(libs.kotlin.gradle)
         classpath(libs.jlleitschuhKtlint)
+        classpath(libs.hilt.gradle)
+    }
+
+    configurations.all {
+        resolutionStrategy.eachDependency {
+            when (requested.name) {
+                // https://github.com/google/dagger/issues/3068
+                "javapoet" -> useVersion("1.13.0")
+            }
+        }
     }
 }
 
