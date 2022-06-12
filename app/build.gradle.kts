@@ -1,6 +1,5 @@
 import com.android.build.api.dsl.ManagedVirtualDevice
 import dev.adambennett.gradle.extensions.enableCompose
-import org.jetbrains.kotlin.kapt3.base.Kapt.kapt
 
 plugins {
     id("com.android.application")
@@ -53,6 +52,7 @@ hilt {
 
 dependencies {
     implementation(project(":ui"))
+    implementation(project(":feed:wiring"))
 
     implementation(libs.material)
     implementation(libs.androidx.activity)
@@ -62,6 +62,7 @@ dependencies {
     implementation(libs.bundles.androidx.compose)
     implementation(libs.androidx.composeNavigation)
 
+    implementation(libs.dagger.hilt.compose.navigation)
     implementation(libs.dagger.hilt.android)
     kapt(libs.dagger.hilt.android.compiler)
 
