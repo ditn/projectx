@@ -33,21 +33,33 @@ class MainActivity : ComponentActivity() {
     }
 }
 
+sealed interface Route
+
+data class BasicRoute(val value: String, val screen: @Composable () -> Unit) : Route
+
+data class RouteWithArgument(
+    val value: String,
+    val argName: String,
+    val screen: @Composable (String) -> Unit,
+) : Route
+
+val destinationSet = setOf(
+    BasicRoute("landing") { Greeting(name = PlatformName) },
+    RouteWithArgument("landing/{someArgument}", "someArgument") { argument ->
+        Greeting(name = argument)
+    }
+)
 
 @Composable
 private fun MyApp(navController: NavHostController) {
     NavHost(navController, startDestination = "landing") {
-        composable("landing") {
-            // TODO: this can be done a level down, but then how does this work in JVM-only UI?
-//            @Composable
-//            fun .presentation.MyScreen() {
-//                val viewModel = hiltViewModel<presentation.MyViewModel>()
-//                ui.MyScreen(viewModel.state) {
-//                    viewModel.events(it)
-//                }
-//            }
-
-            Greeting(name = PlatformName)
+        destinationSet.forEach { route ->
+            when (route) {
+                is BasicRoute -> composable(route.value) { route.screen() }
+                is RouteWithArgument -> composable(route.value) { backStackEntry ->
+                    route.screen(backStackEntry.arguments?.getString(route.argName).orEmpty())
+                }
+            }
         }
     }
 }
