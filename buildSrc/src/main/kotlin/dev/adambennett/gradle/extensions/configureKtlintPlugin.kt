@@ -11,7 +11,7 @@ internal fun Project.configureKtlintPlugin() {
     pluginManager.withPlugin("org.jlleitschuh.gradle.ktlint") {
         extensions.configure(KtlintExtension::class.java) {
             // TODO: Once Version Catalogues can be used in precompiled scripts, get version here
-            version.set("0.45.1")
+            version.set("0.45.2")
             android.set(true)
             outputToConsole.set(true)
             ignoreFailures.set(true)

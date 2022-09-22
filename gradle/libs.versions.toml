@@ -1,6 +1,6 @@
 [versions]
-kotlin = "1.6.10"
-androidBuildTools = "7.4.0-alpha03"
+kotlin = "1.7.10"
+androidBuildTools = "8.0.0-alpha01"
 gradleExperimental = "0.11.1"
 jlleitschuhKtlint = "10.2.1"
 ktlint = "0.45.2"
@@ -11,7 +11,8 @@ material = "1.5.0-alpha01"
 androidx-lifecycle-runtime = "2.5.0-alpha01"
 androidx-activity = "1.5.0-alpha02"
 compose = "1.1.1"
-jetbrainsCompose = "1.1.1"
+composeCompiler = "1.3.1"
+jetbrainsCompose = "1.2.0-beta01"
 composeNavigation = "2.4.1"
 hilt = "2.40"
 hiltComposeNavigation = "1.0.0"
@@ -43,6 +44,7 @@ androidx-composeMaterial = { module = "androidx.compose.material:material", vers
 androidx-composeUiTooling = { module = "androidx.compose.ui:ui-tooling", version.ref = "compose" }
 androidx-composePreview = { module = "androidx.compose.ui:ui-tooling-preview", version.ref = "compose" }
 androidx-composeNavigation = { module = "androidx.navigation:navigation-compose", version.ref = "composeNavigation" }
+androidx-composeCompiler = { module = "androidx.compose.compiler:compiler", version.ref = "composeCompiler" }
 
 dagger-hilt-android = { module = "com.google.dagger:hilt-android", version.ref = "hilt" }
 dagger-hilt-android-compiler = { module = "com.google.dagger:hilt-android-compiler", version.ref = "hilt" }
@@ -56,4 +58,4 @@ testing-compose-ui = { module = "androidx.compose.ui:ui-test-junit4", version.re
 testing-compose-manifest = { module = "androidx.compose.ui:ui-test-manifest", version.ref = "compose" }
 
 [bundles]
-androidx-compose = ["androidx-composeUi", "androidx-composeMaterial", "androidx-composePreview"]
+androidx-compose = ["androidx-composeCompiler", "androidx-composeUi", "androidx-composeMaterial", "androidx-composePreview"]

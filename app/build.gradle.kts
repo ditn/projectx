@@ -27,7 +27,7 @@ android {
         }
     }
 
-    enableCompose(project.libs.versions.jetbrainsCompose.get())
+    enableCompose(project.libs.versions.composeCompiler.get())
 
     packagingOptions {
         resources.excludes.add("META-INF/*")
