@@ -9,7 +9,6 @@ tasks.wrapper {
 dependencies {
 
     compileOnly(libs.android.gradleApi)
-    compileOnly(libs.gradle.experimental)
 
     implementation(libs.kotlin.gradle)
     implementation(libs.android.gradle)

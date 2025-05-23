@@ -13,8 +13,18 @@ repositories {
 }
 
 kotlin {
-    jvm()
-    android()
+    jvm {
+        testTask {
+            useJUnitPlatform()
+        }
+    }
+    android { // This configures the androidTarget from multiplatform
+        testOptions {
+            unitTests.all {
+                useJUnitPlatform()
+            }
+        }
+    }
 
     sourceSets {
         val commonMain by getting {
@@ -44,6 +54,11 @@ android {
 
     dependencies {
         debugImplementation(libs.androidx.composeUiTooling)
+    }
+
+    // For Android instrumented tests, if any
+    testOptions {
+        useJUnitPlatform()
     }
 }
 

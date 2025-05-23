@@ -1,37 +1,35 @@
 [versions]
-kotlin = "1.7.10"
-androidBuildTools = "8.0.0-alpha01"
-gradleExperimental = "0.11.1"
-jlleitschuhKtlint = "10.2.1"
-ktlint = "0.45.2"
+kotlin = "2.1.21"
+androidBuildTools = "8.9.0"
+jlleitschuhKtlint = "12.2.0"
+ktlint = "1.6.0" # Was com.pinterest:ktlint, now com.pinterest.ktlint:ktlint-cli
 
-androidx-core = "1.8.0-alpha03"
-androidx-appcompat = "1.4.1"
-material = "1.5.0-alpha01"
-androidx-lifecycle-runtime = "2.5.0-alpha01"
-androidx-activity = "1.5.0-alpha02"
-compose = "1.1.1"
-composeCompiler = "1.3.1"
-jetbrainsCompose = "1.2.0-beta01"
-composeNavigation = "2.4.1"
-hilt = "2.40"
-hiltComposeNavigation = "1.0.0"
-javaxInject = "1"
+androidx-core = "1.16.0"
+androidx-appcompat = "1.7.0"
+material = "1.12.0"
+androidx-lifecycle-runtime = "2.9.0"
+androidx-activity = "1.10.1" # For activity-compose
+compose = "1.8.2" # For ui, material, etc.
+composeCompiler = "1.5.15"
+jetbrainsCompose = "1.8.1" # For JetBrains Compose Multiplatform
+composeNavigation = "2.9.0"
+hilt = "2.56.2"
+hiltComposeNavigation = "1.2.0"
+javaxInject = "2.0.1" # Artifact changed to jakarta.inject:jakarta.inject-api
 
-testing-junit = "4.13.2"
-testing-androidx-junit = "1.1.3"
-testing-espresso-core = "3.4.0"
-testing-androidx-core = "1.4.1-alpha03"
+testing-junit = "5.12.2" # JUnit 5 - Jupiter API
+testing-androidx-junit = "1.2.1"
+testing-espresso-core = "3.6.1"
+testing-androidx-core = "1.6.1"
 
 [libraries]
 kotlin-gradle = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlin" }
 android-gradle = { module = "com.android.tools.build:gradle", version.ref = "androidBuildTools" }
 android-gradleApi = { module = "com.android.tools.build:gradle-api", version.ref = "androidBuildTools" }
 hilt-gradle = { module = "com.google.dagger:hilt-android-gradle-plugin", version.ref = "hilt" }
-gradle-experimental = { module = "com.android.tools.build:gradle-experimental", version.ref = "gradleExperimental" }
 jlleitschuhKtlint = { module = "org.jlleitschuh.gradle:ktlint-gradle", version.ref = "jlleitschuhKtlint" }
 
-javaxInject = { module = "javax.inject:javax.inject", version.ref = "javaxInject" }
+javaxInject = { module = "jakarta.inject:jakarta.inject-api", version.ref = "javaxInject" } # Artifact changed
 
 androidx-core-ktx = { module = "androidx.core:core-ktx", version.ref = "androidx-core" }
 androidx-appcompat = { module = "androidx.appcompat:appcompat", version.ref = "androidx-appcompat" }
@@ -50,7 +48,7 @@ dagger-hilt-android = { module = "com.google.dagger:hilt-android", version.ref =
 dagger-hilt-android-compiler = { module = "com.google.dagger:hilt-android-compiler", version.ref = "hilt" }
 dagger-hilt-compose-navigation = { module = "androidx.hilt:hilt-navigation-compose", version.ref = "hiltComposeNavigation" }
 
-testing-junit = { module = "junit:junit", version.ref = "testing-junit" }
+testing-junit = { module = "org.junit.jupiter:junit-jupiter-api", version.ref = "testing-junit" } # Artifact changed for JUnit 5
 testing-androidx-junit = { module = "androidx.test.ext:junit-ktx", version.ref = "testing-androidx-junit" }
 testing-androidx-core = { module = "androidx.test:core-ktx", version.ref = "testing-androidx-core" }
 testing-espresso-core = { module = "androidx.test.espresso:espresso-core", version.ref = "testing-espresso-core" }

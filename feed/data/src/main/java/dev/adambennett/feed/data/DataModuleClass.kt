@@ -1,5 +1,5 @@
 package dev.adambennett.feed.data
 
-import javax.inject.Inject
+import jakarta.inject.Inject
 
 class DataModuleClass @Inject constructor()
