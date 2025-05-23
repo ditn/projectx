@@ -34,6 +34,8 @@ android {
     }
 
     testOptions {
+        unitTests.isReturnDefaultValues = true // Recommended for JUnit 5
+        useJUnitPlatform() // Add this line for JUnit 5 support
         managedDevices.devices {
             register<ManagedVirtualDevice>("pixel2api30") {
                 device = "Pixel 2"
